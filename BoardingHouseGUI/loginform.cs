@@ -81,7 +81,7 @@ namespace BoardingHouseGUI
                 BackColor = Color.FromArgb(20, 60, 40),
                 ForeColor = Color.FromArgb(218, 215, 205),
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                Font = new Font("Georgia", 11, FontStyle.Bold),
                 Cursor = Cursors.Hand
             };
                 btnLogin.FlatAppearance.BorderSize = 0;
@@ -107,7 +107,7 @@ namespace BoardingHouseGUI
             {
                 Hide();
                 DashboardForm dash = new DashboardForm();
-                dash.FormClosed += (s, args) => Close();
+                dash.FormClosed += (s, args) => Close();    
                 dash.Show();
             }
             else
