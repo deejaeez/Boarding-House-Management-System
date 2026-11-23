@@ -9,13 +9,13 @@ namespace BoardingHouseGUI
         {
             Text = "Boarding House Management System";
             WindowState = FormWindowState.Maximized;
-            BackColor = ColorTranslator.FromHtml("#DAD7CD");
+            BackColor = Color.FromArgb(218, 215, 205);
             Font = new Font("Georgia", 10);
 
             Panel header = new Panel();
             header.Dock = DockStyle.Top;
             header.Height = 75;
-            header.BackColor = ColorTranslator.FromHtml("#344E41");
+            header.BackColor = Color.FromArgb(52, 78, 65);
 
             Label title = new Label();
             title.Text = "MGQ Boarding House";
@@ -39,7 +39,7 @@ namespace BoardingHouseGUI
             btnAddRoom.Margin = new Padding(0, 0, 10, 0);
             btnAddRoom.FlatStyle = FlatStyle.Flat;
             btnAddRoom.FlatAppearance.BorderSize = 0;
-            btnAddRoom.BackColor = ColorTranslator.FromHtml("#3A5A40");
+            btnAddRoom.BackColor = Color.FromArgb(58, 90, 64);
             btnAddRoom.ForeColor = Color.White;
             btnAddRoom.Cursor = Cursors.Hand;
 
@@ -49,7 +49,7 @@ namespace BoardingHouseGUI
             btnAddTenant.Margin = new Padding(0, 0, 10, 0);
             btnAddTenant.FlatStyle = FlatStyle.Flat;
             btnAddTenant.FlatAppearance.BorderSize = 0;
-            btnAddTenant.BackColor = ColorTranslator.FromHtml("#3A5A40");
+            btnAddTenant.BackColor = Color.FromArgb(58, 90, 64);
             btnAddTenant.ForeColor = Color.White;
             btnAddTenant.Cursor = Cursors.Hand;
 
@@ -59,7 +59,7 @@ namespace BoardingHouseGUI
             btnPayment.Margin = new Padding(0, 0, 10, 0);
             btnPayment.FlatStyle = FlatStyle.Flat;
             btnPayment.FlatAppearance.BorderSize = 0;
-            btnPayment.BackColor = ColorTranslator.FromHtml("#3A5A40");
+            btnPayment.BackColor = Color.FromArgb(58, 90, 64);
             btnPayment.ForeColor = Color.White;
             btnPayment.Cursor = Cursors.Hand;
 
@@ -69,7 +69,7 @@ namespace BoardingHouseGUI
             btnMoveOut.Margin = new Padding(0, 0, 10, 0);
             btnMoveOut.FlatStyle = FlatStyle.Flat;
             btnMoveOut.FlatAppearance.BorderSize = 0;
-            btnMoveOut.BackColor = ColorTranslator.FromHtml("#3A5A40");
+            btnMoveOut.BackColor = Color.FromArgb(58, 90, 64);
             btnMoveOut.ForeColor = Color.White;
             btnMoveOut.Cursor = Cursors.Hand;
 
@@ -77,11 +77,11 @@ namespace BoardingHouseGUI
             btnLogout.Text = "Logout";
             btnLogout.Size = new Size(110, 40);
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.FlatAppearance.BorderColor = ColorTranslator.FromHtml("#A3B18A");
+            btnLogout.FlatAppearance.BorderColor = Color.FromArgb(163, 177, 138);
             btnLogout.FlatAppearance.BorderSize = 1;
             btnLogout.Dock = DockStyle.Right;
-            btnLogout.BackColor = ColorTranslator.FromHtml("#DAD7CD");
-            btnLogout.ForeColor = ColorTranslator.FromHtml("#344E41");
+            btnLogout.BackColor = Color.FromArgb(218, 215, 205);
+            btnLogout.ForeColor = Color.FromArgb(52, 78, 65);
             btnLogout.Cursor = Cursors.Hand;
 
             buttonBar.Controls.Add(btnAddRoom);
@@ -100,7 +100,7 @@ namespace BoardingHouseGUI
             TextBox searchBox = new TextBox();
             searchBox.Dock = DockStyle.Fill;
             searchBox.BorderStyle = BorderStyle.None;
-            searchBox.ForeColor = ColorTranslator.FromHtml("#344E41");
+            searchBox.ForeColor = Color.FromArgb(52, 78, 65);
             searchBox.PlaceholderText = "Search by tenant name or room number";
             searchPanel.Controls.Add(searchBox);
 
@@ -122,20 +122,20 @@ namespace BoardingHouseGUI
             roomsGrid.BackgroundColor = Color.White;
             roomsGrid.BorderStyle = BorderStyle.None;
             roomsGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            roomsGrid.GridColor = ColorTranslator.FromHtml("#DAD7CD");
+            roomsGrid.GridColor = Color.FromArgb(218, 215, 205);
             roomsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             roomsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             roomsGrid.RowTemplate.Height = 36;
             roomsGrid.EnableHeadersVisualStyles = false;
             roomsGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             roomsGrid.ColumnHeadersHeight = 40;
-            roomsGrid.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#3A5A40");
+            roomsGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(58, 90, 64);
             roomsGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            roomsGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#3A5A40");
+            roomsGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(58, 90, 64);
             roomsGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
-            roomsGrid.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#344E41");
-            roomsGrid.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#A3B18A");
-            roomsGrid.DefaultCellStyle.SelectionForeColor = ColorTranslator.FromHtml("#344E41");
+            roomsGrid.DefaultCellStyle.ForeColor = Color.FromArgb(52, 78, 65);
+            roomsGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(163, 177, 138);
+            roomsGrid.DefaultCellStyle.SelectionForeColor = Color.FromArgb(52, 78, 65);
             roomsGrid.Columns.Add("room", "Room");
             roomsGrid.Columns.Add("rate", "Monthly Rate");
             roomsGrid.Columns.Add("status", "Status");
@@ -146,7 +146,7 @@ namespace BoardingHouseGUI
             roomsTitle.Dock = DockStyle.Top;
             roomsTitle.Height = 40;
             roomsTitle.Font = new Font("Segoe UI Semibold", 12);
-            roomsTitle.ForeColor = ColorTranslator.FromHtml("#344E41");
+            roomsTitle.ForeColor = Color.FromArgb(52, 78, 65);
             roomsTitle.TextAlign = ContentAlignment.MiddleLeft;
 
             Panel roomsCard = new Panel();
@@ -166,20 +166,20 @@ namespace BoardingHouseGUI
             unpaidGrid.BackgroundColor = Color.White;
             unpaidGrid.BorderStyle = BorderStyle.None;
             unpaidGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            unpaidGrid.GridColor = ColorTranslator.FromHtml("#DAD7CD");
+            unpaidGrid.GridColor = Color.FromArgb(218, 215, 205);
             unpaidGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             unpaidGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             unpaidGrid.RowTemplate.Height = 36;
             unpaidGrid.EnableHeadersVisualStyles = false;
             unpaidGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             unpaidGrid.ColumnHeadersHeight = 40;
-            unpaidGrid.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#3A5A40");
+            unpaidGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(58, 90, 64);
             unpaidGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            unpaidGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#3A5A40");
+            unpaidGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(58, 90, 64);
             unpaidGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
-            unpaidGrid.DefaultCellStyle.ForeColor = ColorTranslator.FromHtml("#344E41");
-            unpaidGrid.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#A3B18A");
-            unpaidGrid.DefaultCellStyle.SelectionForeColor = ColorTranslator.FromHtml("#344E41");
+            unpaidGrid.DefaultCellStyle.ForeColor = Color.FromArgb(52, 78, 65);
+            unpaidGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(163, 177, 138);
+            unpaidGrid.DefaultCellStyle.SelectionForeColor = Color.FromArgb(52, 78, 65);
             unpaidGrid.Columns.Add("tenant", "Tenant");
             unpaidGrid.Columns.Add("room", "Room");
             unpaidGrid.Columns.Add("balance", "Balance");
@@ -190,7 +190,7 @@ namespace BoardingHouseGUI
             unpaidTitle.Dock = DockStyle.Top;
             unpaidTitle.Height = 40;
             unpaidTitle.Font = new Font("Segoe UI Semibold", 12);
-            unpaidTitle.ForeColor = ColorTranslator.FromHtml("#344E41");
+            unpaidTitle.ForeColor = Color.FromArgb(52, 78, 65);
             unpaidTitle.TextAlign = ContentAlignment.MiddleLeft;
 
             Panel unpaidCard = new Panel();
