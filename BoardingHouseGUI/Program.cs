@@ -104,7 +104,7 @@ namespace BoardingHouseGUI
 
         void BtnLogin_Click(object? sender, EventArgs e)
         {
-            if (txtUser.Text == "admin" && txtPass.Text == "1234")
+            if (txtUser.Text == "adminquima" && txtPass.Text == "1234")
             {
                 Hide();
                 DashboardForm dash = new DashboardForm();
