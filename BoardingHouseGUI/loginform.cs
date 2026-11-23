@@ -84,11 +84,11 @@ namespace BoardingHouseGUI
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 Cursor = Cursors.Hand
             };
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.Click += BtnLogin_Click;
-            AcceptButton = btnLogin;
+                btnLogin.FlatAppearance.BorderSize = 0;
+                btnLogin.Click += BtnLogin_Click;
+                AcceptButton = btnLogin;
 
-            box.Controls.AddRange(new Control[] { sub, lblUser, txtUser, lblPass, txtPass, btnLogin });
+                box.Controls.AddRange(new Control[] { sub, lblUser, txtUser, lblPass, txtPass, btnLogin });
 
             void CenterBox()
             {
@@ -104,7 +104,7 @@ namespace BoardingHouseGUI
 
         void BtnLogin_Click(object? sender, EventArgs e)
         {
-            if (txtUser.Text == "adminquima" && txtPass.Text == "1234")
+            if (txtUser.Text == "admin" && txtPass.Text == "1234")
             {
                 Hide();
                 DashboardForm dash = new DashboardForm();
