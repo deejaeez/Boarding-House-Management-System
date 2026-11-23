@@ -12,23 +12,23 @@ namespace BoardingHouseGUI
         public LoginForm()
         {
             Text = "Boarding House Management System";
-            ClientSize = new Size(600, 600);
+            ClientSize = new Size(500, 400);
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(218, 215, 205);
             Font = new Font("Georgia", 10);
 
             Panel header = new Panel
             {
                 Dock = DockStyle.Top,
                 Height = 120,
-                BackColor = Color.FromArgb(58, 90, 64)
+                BackColor = Color.FromArgb(20, 60, 40)
             };
             header.Controls.Add(new Label
             {
-                Text = "BOARDING HOUSE\nMANAGEMENT SYSTEM",
-                ForeColor = Color.White,
+                Text = "MGQ Boarding House",
+                ForeColor = Color.FromArgb(218, 215, 205),
                 Font = new Font("Georgia", 16, FontStyle.Bold),
                 Dock = DockStyle.Fill,
                 TextAlign = ContentAlignment.MiddleCenter
@@ -41,7 +41,7 @@ namespace BoardingHouseGUI
             {
                 Text = "Admin Login",
                 Font = new Font("Georgia", 15, FontStyle.Bold),
-                ForeColor = Color.FromArgb(58, 90, 64),
+                ForeColor = Color.FromArgb(20, 60, 40),
                 Location = new Point(0, 0),
                 Size = new Size(w, 30),
                 AutoSize = false,
@@ -78,8 +78,8 @@ namespace BoardingHouseGUI
                 Text = "LOGIN",
                 Location = new Point(0, 218),
                 Size = new Size(w, 42),
-                BackColor = Color.FromArgb(58, 90, 64),
-                ForeColor = Color.White,
+                BackColor = Color.FromArgb(20, 60, 40),
+                ForeColor = Color.FromArgb(218, 215, 205),
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 Cursor = Cursors.Hand
