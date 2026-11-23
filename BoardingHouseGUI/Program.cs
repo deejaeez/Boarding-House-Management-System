@@ -23,7 +23,7 @@ namespace BoardingHouseGUI
             {
                 Dock = DockStyle.Top,
                 Height = 120,
-                BackColor = Color.FromArgb(20, 83, 45)
+                BackColor = Color.FromArgb(58, 90, 64)
             };
             header.Controls.Add(new Label
             {
@@ -41,7 +41,7 @@ namespace BoardingHouseGUI
             {
                 Text = "Admin Login",
                 Font = new Font("Georgia", 15, FontStyle.Bold),
-                ForeColor = Color.FromArgb(20, 83, 45),
+                ForeColor = Color.FromArgb(58, 90, 64),
                 Location = new Point(0, 0),
                 Size = new Size(w, 30),
                 AutoSize = false,
@@ -78,7 +78,7 @@ namespace BoardingHouseGUI
                 Text = "LOGIN",
                 Location = new Point(0, 218),
                 Size = new Size(w, 42),
-                BackColor = Color.FromArgb(20, 83, 45),
+                BackColor = Color.FromArgb(58, 90, 64),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
