@@ -101,7 +101,6 @@ namespace BoardingHouseGUI
 
             Controls.AddRange(new Control[] { header, box });
         }
-
         void BtnLogin_Click(object? sender, EventArgs e)
         {
             if (txtUser.Text == "admin" && txtPass.Text == "1234")
