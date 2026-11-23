@@ -7,13 +7,11 @@ namespace BoardingHouseGUI
     {
         public DashboardForm()
         {
-            // ---------- Window ----------
             Text = "Boarding House Management System";
             WindowState = FormWindowState.Maximized;
             BackColor = ColorTranslator.FromHtml("#DAD7CD");
             Font = new Font("Georgia", 10);
 
-            // ---------- Header (dark green strip with title and date) ----------
             Panel header = new Panel();
             header.Dock = DockStyle.Top;
             header.Height = 75;
@@ -30,7 +28,7 @@ namespace BoardingHouseGUI
 
             header.Controls.Add(title);
 
-            // ---------- Buttons (green = actions, light = logout) ----------
+            // ---------- Buttons (green = actons, light = logout) ----------
             FlowLayoutPanel buttonBar = new FlowLayoutPanel();
             buttonBar.Dock = DockStyle.Top;
             buttonBar.Height = 48;

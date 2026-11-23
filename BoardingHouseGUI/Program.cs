@@ -98,7 +98,6 @@ namespace BoardingHouseGUI
                     header.Height + (freeHeight - box.Height) / 2);
             }
             CenterBox();
-            Resize += (s, e) => CenterBox();
 
             Controls.AddRange(new Control[] { header, box });
         }
