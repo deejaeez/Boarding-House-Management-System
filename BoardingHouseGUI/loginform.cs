@@ -99,7 +99,8 @@ namespace BoardingHouseGUI
             }
             CenterBox();
 
-            Controls.AddRange(new Control[] { header, box });
+            Controls.Add(header);
+            Controls.Add(box);
         }
         void BtnLogin_Click(object? sender, EventArgs e)
         {
