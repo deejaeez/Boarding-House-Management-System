@@ -12,7 +12,7 @@ namespace BoardingHouseGUI
         public LoginForm()
         {
             Text = "Boarding House Management System";
-            ClientSize = new Size(500, 400);
+            ClientSize = new Size(450, 400);
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
@@ -25,6 +25,7 @@ namespace BoardingHouseGUI
                 Height = 120,
                 BackColor = Color.FromArgb(20, 60, 40)
             };
+
             header.Controls.Add(new Label
             {
                 Text = "MGQ Boarding House",
@@ -34,15 +35,21 @@ namespace BoardingHouseGUI
                 TextAlign = ContentAlignment.MiddleCenter
             });
 
-            int w = 320;
-            Panel box = new Panel { Size = new Size(w, 260) };
+            // ---------- LOGIN BOX ----------
+            int w = 300;
+
+            Panel box = new Panel
+            {
+                Size = new Size(w, 260),
+                Location = new Point(75, 140)
+            };
 
             Label sub = new Label
             {
                 Text = "Admin Login",
                 Font = new Font("Georgia", 15, FontStyle.Bold),
                 ForeColor = Color.FromArgb(20, 60, 40),
-                Location = new Point(0, 0),
+                Location = new Point(0, -5),
                 Size = new Size(w, 30),
                 AutoSize = false,
                 TextAlign = ContentAlignment.MiddleCenter
@@ -51,24 +58,26 @@ namespace BoardingHouseGUI
             Label lblUser = new Label
             {
                 Text = "Username",
-                Location = new Point(0, 55),
+                Location = new Point(0, 40),
                 Size = new Size(w, 25),
                 AutoSize = false,
                 TextAlign = ContentAlignment.MiddleCenter
             };
-            txtUser.Location = new Point(0, 85);
+
+            txtUser.Location = new Point(0, 70);
             txtUser.Width = w;
             txtUser.TextAlign = HorizontalAlignment.Center;
 
             Label lblPass = new Label
             {
                 Text = "Password",
-                Location = new Point(0, 130),
+                Location = new Point(0, 110),
                 Size = new Size(w, 25),
                 AutoSize = false,
                 TextAlign = ContentAlignment.MiddleCenter
             };
-            txtPass.Location = new Point(0, 160);
+
+            txtPass.Location = new Point(0, 140);
             txtPass.Width = w;
             txtPass.TextAlign = HorizontalAlignment.Center;
             txtPass.UseSystemPasswordChar = true;
@@ -76,39 +85,37 @@ namespace BoardingHouseGUI
             Button btnLogin = new Button
             {
                 Text = "LOGIN",
-                Location = new Point(0, 218),
+                Location = new Point(0, 180),
                 Size = new Size(w, 42),
                 BackColor = Color.FromArgb(20, 60, 40),
                 ForeColor = Color.FromArgb(218, 215, 205),
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Georgia", 11, FontStyle.Bold),
-                Cursor = Cursors.Hand
+                Cursor = Cursors.Hand,
+                TextAlign = ContentAlignment.MiddleCenter
             };
-                btnLogin.FlatAppearance.BorderSize = 0;
-                btnLogin.Click += BtnLogin_Click;
-                AcceptButton = btnLogin;
 
-                box.Controls.AddRange(new Control[] { sub, lblUser, txtUser, lblPass, txtPass, btnLogin });
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.Click += BtnLogin_Click;
+            AcceptButton = btnLogin;
 
-            void CenterBox()
+            box.Controls.AddRange(new Control[]
             {
-                int freeHeight = ClientSize.Height - header.Height;
-                box.Location = new Point(
-                    (ClientSize.Width - box.Width) / 2,
-                    header.Height + (freeHeight - box.Height) / 2);
-            }
-            CenterBox();
+                sub, lblUser, txtUser, lblPass, txtPass, btnLogin
+            });
 
             Controls.Add(header);
             Controls.Add(box);
         }
+
         void BtnLogin_Click(object? sender, EventArgs e)
         {
             if (txtUser.Text == "admin" && txtPass.Text == "1234")
             {
                 Hide();
+
                 DashboardForm dash = new DashboardForm();
-                dash.FormClosed += (s, args) => Close();    
+                dash.FormClosed += (s, args) => Close();
                 dash.Show();
             }
             else
