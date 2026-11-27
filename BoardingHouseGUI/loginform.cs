@@ -86,7 +86,6 @@ namespace BoardingHouseGUI
             };
                 btnLogin.FlatAppearance.BorderSize = 0;
                 btnLogin.Click += BtnLogin_Click;
-                AcceptButton = btnLogin;
 
                 box.Controls.AddRange(new Control[] { sub, lblUser, txtUser, lblPass, txtPass, btnLogin });
 
@@ -106,7 +105,7 @@ namespace BoardingHouseGUI
             if (txtUser.Text == "admin" && txtPass.Text == "1234")
             {
                 Hide();
-                DashboardForm dash = new DashboardForm();
+                DashboardForm dash = new DashboardForm(); 
                 dash.FormClosed += (s, args) => Close();    
                 dash.Show();
             }
