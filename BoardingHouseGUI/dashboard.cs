@@ -1,3 +1,5 @@
+
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,220 +12,195 @@ namespace BoardingHouseGUI
             Text = "Boarding House Management System";
             WindowState = FormWindowState.Maximized;
             BackColor = Color.FromArgb(218, 215, 205);
-            Font = new Font("Georgia", 10);
+            Font = new Font("Georgia", 12);
 
+            // ---------- Header ----------
             Panel header = new Panel();
             header.Dock = DockStyle.Top;
-            header.Height = 75;
+            header.Height = 130;
             header.BackColor = Color.FromArgb(52, 78, 65);
 
             Label title = new Label();
             title.Text = "MGQ Boarding House";
             title.Dock = DockStyle.Left;
-            title.Width = 400;
+            title.Width = 450;
             title.Padding = new Padding(30, 0, 0, 0);
-            title.Font = new Font("Georgia", 18, FontStyle.Italic);
+            title.Font = new Font("Georgia", 23, FontStyle.Italic);
             title.ForeColor = Color.White;
             title.TextAlign = ContentAlignment.MiddleLeft;
 
             header.Controls.Add(title);
 
-            // ---------- Buttons (green = actons, light = logout) ----------
-            FlowLayoutPanel buttonBar = new FlowLayoutPanel();
-            buttonBar.Dock = DockStyle.Top;
-            buttonBar.Height = 48;
+            // ---------- Sidebar ----------
+            Panel sidebar = new Panel();
+            sidebar.Dock = DockStyle.Left;
+            sidebar.Width = 250;
+            sidebar.BackColor = Color.FromArgb(38, 61, 51);
 
+            // ---------- Sidebar Button Layout ----------
+            FlowLayoutPanel buttonBar = new FlowLayoutPanel();
+            buttonBar.Dock = DockStyle.Fill;
+            buttonBar.FlowDirection = FlowDirection.TopDown;
+            buttonBar.WrapContents = false;
+            buttonBar.Padding = new Padding(10, 15, 10, 0);
+            buttonBar.AutoScroll = true;
+            buttonBar.BackColor = Color.FromArgb(38, 61, 51);
+
+            // ---------- Main Menu Title ----------
+            Label mainMenuTitle = new Label();
+            mainMenuTitle.Text = "MAIN MENU";
+            mainMenuTitle.Size = new Size(220, 40);
+            mainMenuTitle.Margin = new Padding(0, 0, 0, 5);
+            mainMenuTitle.Font = new Font("Segoe UI Semibold", 10);
+            mainMenuTitle.ForeColor = Color.FromArgb(190, 205, 193);
+            mainMenuTitle.TextAlign = ContentAlignment.MiddleLeft;
+
+            // ---------- Dashboard Button ----------
+            Button btnDashboard = new Button();
+            btnDashboard.Text = "Dashboard";
+            btnDashboard.Size = new Size(220, 65);
+            btnDashboard.Margin = new Padding(0, 0, 0, 10);
+            btnDashboard.Font = new Font("Georgia", 14);
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.BackColor = Color.FromArgb(82, 109, 91);
+            btnDashboard.ForeColor = Color.White;
+            btnDashboard.Cursor = Cursors.Hand;
+
+            // ---------- Add Room Button ----------
             Button btnAddRoom = new Button();
             btnAddRoom.Text = "Add Room";
-            btnAddRoom.Size = new Size(130, 40);
-            btnAddRoom.Margin = new Padding(0, 0, 10, 0);
+            btnAddRoom.Size = new Size(220, 65);
+            btnAddRoom.Margin = new Padding(0, 0, 0, 10);
+            btnAddRoom.Font = new Font("Georgia", 14);
             btnAddRoom.FlatStyle = FlatStyle.Flat;
             btnAddRoom.FlatAppearance.BorderSize = 0;
             btnAddRoom.BackColor = Color.FromArgb(58, 90, 64);
             btnAddRoom.ForeColor = Color.White;
             btnAddRoom.Cursor = Cursors.Hand;
 
+            // ---------- Add Tenant Button ----------
             Button btnAddTenant = new Button();
             btnAddTenant.Text = "Add Tenant";
-            btnAddTenant.Size = new Size(130, 40);
-            btnAddTenant.Margin = new Padding(0, 0, 10, 0);
+            btnAddTenant.Size = new Size(220, 65);
+            btnAddTenant.Margin = new Padding(0, 0, 0, 10);
+            btnAddTenant.Font = new Font("Georgia", 14);
             btnAddTenant.FlatStyle = FlatStyle.Flat;
             btnAddTenant.FlatAppearance.BorderSize = 0;
             btnAddTenant.BackColor = Color.FromArgb(58, 90, 64);
             btnAddTenant.ForeColor = Color.White;
             btnAddTenant.Cursor = Cursors.Hand;
 
+            // ---------- Record Payment Button ----------
             Button btnPayment = new Button();
             btnPayment.Text = "Record Payment";
-            btnPayment.Size = new Size(150, 40);
-            btnPayment.Margin = new Padding(0, 0, 10, 0);
+            btnPayment.Size = new Size(220, 65);
+            btnPayment.Margin = new Padding(0, 0, 0, 10);
+            btnPayment.Font = new Font("Georgia", 14);
             btnPayment.FlatStyle = FlatStyle.Flat;
             btnPayment.FlatAppearance.BorderSize = 0;
             btnPayment.BackColor = Color.FromArgb(58, 90, 64);
             btnPayment.ForeColor = Color.White;
             btnPayment.Cursor = Cursors.Hand;
 
+            // ---------- Move Out Button ----------
             Button btnMoveOut = new Button();
             btnMoveOut.Text = "Move Out";
-            btnMoveOut.Size = new Size(130, 40);
-            btnMoveOut.Margin = new Padding(0, 0, 10, 0);
+            btnMoveOut.Size = new Size(220, 65);
+            btnMoveOut.Margin = new Padding(0, 0, 0, 10);
+            btnMoveOut.Font = new Font("Georgia", 14);
             btnMoveOut.FlatStyle = FlatStyle.Flat;
             btnMoveOut.FlatAppearance.BorderSize = 0;
             btnMoveOut.BackColor = Color.FromArgb(58, 90, 64);
             btnMoveOut.ForeColor = Color.White;
             btnMoveOut.Cursor = Cursors.Hand;
 
-            Button btnLogout = new Button();
-            btnLogout.Text = "Logout";
-            btnLogout.Size = new Size(110, 40);
-            btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.FlatAppearance.BorderColor = Color.FromArgb(163, 177, 138);
-            btnLogout.FlatAppearance.BorderSize = 1;
-            btnLogout.Dock = DockStyle.Right;
-            btnLogout.BackColor = Color.FromArgb(218, 215, 205);
-            btnLogout.ForeColor = Color.FromArgb(52, 78, 65);
-            btnLogout.Cursor = Cursors.Hand;
+            // ---------- Management Title ----------
+            Label managementTitle = new Label();
+            managementTitle.Text = "MANAGEMENT";
+            managementTitle.Size = new Size(220, 40);
+            managementTitle.Margin = new Padding(0, 15, 0, 5);
+            managementTitle.Font = new Font("Segoe UI Semibold", 10);
+            managementTitle.ForeColor = Color.FromArgb(190, 205, 193);
+            managementTitle.TextAlign = ContentAlignment.MiddleLeft;
 
+            // ---------- Room Occupancy Button ----------
+            Button btnRoomOccupancy = new Button();
+            btnRoomOccupancy.Text = "Room Occupancy";
+            btnRoomOccupancy.Size = new Size(220, 65);
+            btnRoomOccupancy.Margin = new Padding(0, 0, 0, 10);
+            btnRoomOccupancy.Font = new Font("Georgia", 14);
+            btnRoomOccupancy.FlatStyle = FlatStyle.Flat;
+            btnRoomOccupancy.FlatAppearance.BorderSize = 0;
+            btnRoomOccupancy.BackColor = Color.FromArgb(58, 90, 64);
+            btnRoomOccupancy.ForeColor = Color.White;
+            btnRoomOccupancy.Cursor = Cursors.Hand;
+
+            // ---------- Unpaid Balances Button ----------
+            Button btnUnpaidBalances = new Button();
+            btnUnpaidBalances.Text = "Unpaid Balances";
+            btnUnpaidBalances.Size = new Size(220, 65);
+            btnUnpaidBalances.Margin = new Padding(0, 0, 0, 10);
+            btnUnpaidBalances.Font = new Font("Georgia", 14);
+            btnUnpaidBalances.FlatStyle = FlatStyle.Flat;
+            btnUnpaidBalances.FlatAppearance.BorderSize = 0;
+            btnUnpaidBalances.BackColor = Color.FromArgb(58, 90, 64);
+            btnUnpaidBalances.ForeColor = Color.White;
+            btnUnpaidBalances.Cursor = Cursors.Hand;
+
+            // ---------- Add Buttons to Sidebar ----------
+            buttonBar.Controls.Add(mainMenuTitle);
+            buttonBar.Controls.Add(btnDashboard);
             buttonBar.Controls.Add(btnAddRoom);
             buttonBar.Controls.Add(btnAddTenant);
             buttonBar.Controls.Add(btnPayment);
             buttonBar.Controls.Add(btnMoveOut);
-            buttonBar.Controls.Add(btnLogout);
 
-            // ---------- Search (white box, no border) ----------
-            Panel searchPanel = new Panel();
-            searchPanel.Dock = DockStyle.Top;
-            searchPanel.Height = 46;
-            searchPanel.BackColor = Color.White;
-            searchPanel.Padding = new Padding(16, 13, 16, 8);
+            buttonBar.Controls.Add(managementTitle);
+            buttonBar.Controls.Add(btnRoomOccupancy);
+            buttonBar.Controls.Add(btnUnpaidBalances);
 
-            TextBox searchBox = new TextBox();
-            searchBox.Dock = DockStyle.Fill;
-            searchBox.BorderStyle = BorderStyle.None;
-            searchBox.ForeColor = Color.FromArgb(52, 78, 65);
-            searchBox.PlaceholderText = "Search by tenant name or room number";
-            searchPanel.Controls.Add(searchBox);
+            // ---------- Logout Button ----------
+            Panel logoutPanel = new Panel();
+            logoutPanel.Dock = DockStyle.Bottom;
+            logoutPanel.Height = 85;
+            logoutPanel.Padding = new Padding(15, 10, 15, 15);
+            logoutPanel.BackColor = Color.FromArgb(38, 61, 51);
 
-            // ---------- Empty spacers (just gaps between sections) ----------
-            Panel gapAboveSearch = new Panel();
-            gapAboveSearch.Dock = DockStyle.Top;
-            gapAboveSearch.Height = 16;
+            Button btnLogout = new Button();
+            btnLogout.Text = "Logout";
+            btnLogout.Dock = DockStyle.Fill;
+            btnLogout.Font = new Font("Georgia", 14);
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.FlatAppearance.BorderColor =
+                Color.FromArgb(163, 177, 138);
+            btnLogout.FlatAppearance.BorderSize = 1;
+            btnLogout.BackColor = Color.FromArgb(218, 215, 205);
+            btnLogout.ForeColor = Color.FromArgb(52, 78, 65);
+            btnLogout.Cursor = Cursors.Hand;
 
-            Panel gapBelowSearch = new Panel();
-            gapBelowSearch.Dock = DockStyle.Top;
-            gapBelowSearch.Height = 16;
+            logoutPanel.Controls.Add(btnLogout);
 
-            // ---------- Table 1: Room Occupancy ----------
-            DataGridView roomsGrid = new DataGridView();
-            roomsGrid.Dock = DockStyle.Fill;
-            roomsGrid.ReadOnly = true;
-            roomsGrid.AllowUserToAddRows = false;
-            roomsGrid.RowHeadersVisible = false;
-            roomsGrid.BackgroundColor = Color.White;
-            roomsGrid.BorderStyle = BorderStyle.None;
-            roomsGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            roomsGrid.GridColor = Color.FromArgb(218, 215, 205);
-            roomsGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            roomsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            roomsGrid.RowTemplate.Height = 36;
-            roomsGrid.EnableHeadersVisualStyles = false;
-            roomsGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            roomsGrid.ColumnHeadersHeight = 40;
-            roomsGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(58, 90, 64);
-            roomsGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            roomsGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(58, 90, 64);
-            roomsGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
-            roomsGrid.DefaultCellStyle.ForeColor = Color.FromArgb(52, 78, 65);
-            roomsGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(163, 177, 138);
-            roomsGrid.DefaultCellStyle.SelectionForeColor = Color.FromArgb(52, 78, 65);
-            roomsGrid.Columns.Add("room", "Room");
-            roomsGrid.Columns.Add("rate", "Monthly Rate");
-            roomsGrid.Columns.Add("status", "Status");
-            roomsGrid.Columns.Add("tenant", "Tenant");
+            sidebar.Controls.Add(buttonBar);
+            sidebar.Controls.Add(logoutPanel);
 
-            Label roomsTitle = new Label();
-            roomsTitle.Text = "Room Occupancy";
-            roomsTitle.Dock = DockStyle.Top;
-            roomsTitle.Height = 40;
-            roomsTitle.Font = new Font("Segoe UI Semibold", 12);
-            roomsTitle.ForeColor = Color.FromArgb(52, 78, 65);
-            roomsTitle.TextAlign = ContentAlignment.MiddleLeft;
+            // ---------- Main Content Panel ----------
+            Panel contentPanel = new Panel();
+            contentPanel.Dock = DockStyle.Fill;
+            contentPanel.BackColor = Color.FromArgb(218, 215, 205);
+            contentPanel.Padding = new Padding(30);
 
-            Panel roomsCard = new Panel();
-            roomsCard.Dock = DockStyle.Fill;
-            roomsCard.BackColor = Color.White;
-            roomsCard.Padding = new Padding(20, 14, 20, 14);
-            roomsCard.Margin = new Padding(0, 0, 8, 0);
-            roomsCard.Controls.Add(roomsGrid);    // Fill first
-            roomsCard.Controls.Add(roomsTitle);   // then Top
+            // Dashboard content will be added later.
 
-            // ---------- Table 2: Unpaid Balances ----------
-            DataGridView unpaidGrid = new DataGridView();
-            unpaidGrid.Dock = DockStyle.Fill;
-            unpaidGrid.ReadOnly = true;
-            unpaidGrid.AllowUserToAddRows = false;
-            unpaidGrid.RowHeadersVisible = false;
-            unpaidGrid.BackgroundColor = Color.White;
-            unpaidGrid.BorderStyle = BorderStyle.None;
-            unpaidGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            unpaidGrid.GridColor = Color.FromArgb(218, 215, 205);
-            unpaidGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            unpaidGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            unpaidGrid.RowTemplate.Height = 36;
-            unpaidGrid.EnableHeadersVisualStyles = false;
-            unpaidGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            unpaidGrid.ColumnHeadersHeight = 40;
-            unpaidGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(58, 90, 64);
-            unpaidGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            unpaidGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(58, 90, 64);
-            unpaidGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
-            unpaidGrid.DefaultCellStyle.ForeColor = Color.FromArgb(52, 78, 65);
-            unpaidGrid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(163, 177, 138);
-            unpaidGrid.DefaultCellStyle.SelectionForeColor = Color.FromArgb(52, 78, 65);
-            unpaidGrid.Columns.Add("tenant", "Tenant");
-            unpaidGrid.Columns.Add("room", "Room");
-            unpaidGrid.Columns.Add("balance", "Balance");
-            unpaidGrid.Columns.Add("status", "Status");
+            // ---------- Main Layout ----------
+            Panel mainLayout = new Panel();
+            mainLayout.Dock = DockStyle.Fill;
 
-            Label unpaidTitle = new Label();
-            unpaidTitle.Text = "Tenants with Unpaid Balances";
-            unpaidTitle.Dock = DockStyle.Top;
-            unpaidTitle.Height = 40;
-            unpaidTitle.Font = new Font("Segoe UI Semibold", 12);
-            unpaidTitle.ForeColor = Color.FromArgb(52, 78, 65);
-            unpaidTitle.TextAlign = ContentAlignment.MiddleLeft;
+            mainLayout.Controls.Add(contentPanel);
+            mainLayout.Controls.Add(sidebar);
 
-            Panel unpaidCard = new Panel();
-            unpaidCard.Dock = DockStyle.Fill;
-            unpaidCard.BackColor = Color.White;
-            unpaidCard.Padding = new Padding(20, 14, 20, 14);
-            unpaidCard.Margin = new Padding(8, 0, 0, 0);
-            unpaidCard.Controls.Add(unpaidGrid);    // Fill first
-            unpaidCard.Controls.Add(unpaidTitle);   // then Top
-
-            // ---------- Two equal columns that hold the cards ----------
-            TableLayoutPanel tables = new TableLayoutPanel();
-            tables.Dock = DockStyle.Fill;
-            tables.ColumnCount = 2;
-            tables.RowCount = 1;
-            tables.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
-            tables.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
-            tables.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
-            tables.Controls.Add(roomsCard, 0, 0);
-            tables.Controls.Add(unpaidCard, 1, 0);
-
-            // ---------- Main area (padding gives the page margins) ----------
-            Panel content = new Panel();
-            content.Dock = DockStyle.Fill;
-            content.Padding = new Padding(30, 24, 30, 30);
-            content.Controls.Add(tables);          // Fill first
-            content.Controls.Add(gapBelowSearch);  // then Top, from bottom to top
-            content.Controls.Add(searchPanel);
-            content.Controls.Add(gapAboveSearch);
-            content.Controls.Add(buttonBar);
-
-            // ---------- Add to window: Fill first, then Top ----------
-            Controls.Add(content);
+            // ---------- Add to Form ----------
+            Controls.Add(mainLayout);
             Controls.Add(header);
         }
     }
